@@ -27,9 +27,7 @@ export function Hero() {
   useEffect(() => {
     const el = videoRef.current;
     if (!el) return;
-    el.muted = true;
     el.defaultMuted = true;
-    el.volume = 0;
   }, []);
 
   const { scrollYProgress } = useScroll({
@@ -150,10 +148,8 @@ export function Hero() {
                   muted
                   loop
                   playsInline
-                  preload="auto"
-                  controls={false}
-                  disablePictureInPicture
-                  controlsList="nodownload noplaybackrate"
+                  preload="metadata"
+                  controls
                   aria-label="Vídeo institucional JV Eletrônicos"
                 />
               </div>

@@ -1,8 +1,8 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Clapperboard, Volume2, VolumeX, MessageCircle } from "lucide-react";
+import { Clapperboard, MessageCircle } from "lucide-react";
 import { FaInstagram } from "react-icons/fa";
 import {
   getWhatsAppLink,
@@ -12,32 +12,16 @@ import {
 import styles from "./VideoSection.module.css";
 
 export function VideoSection() {
-  const containerRef = useRef(null);
   const videoRef = useRef(null);
-  const [soundOn, setSoundOn] = useState(false);
 
   const wa = getWhatsAppLink(
     "Assisti ao vídeo da loja no site e quero fechar meu iPhone agora. Pode me atender?"
   );
 
   useEffect(() => {
-    const root = containerRef.current;
     const video = videoRef.current;
-    if (!root || !video) return;
-
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          video.play().catch(() => {});
-        } else {
-          video.pause();
-          setSoundOn(false);
-        }
-      },
-      { threshold: 0.32, rootMargin: "0px 0px -8% 0px" }
-    );
-    obs.observe(root);
-    return () => obs.disconnect();
+    if (!video) return;
+    video.defaultMuted = true;
   }, []);
 
   return (
@@ -76,33 +60,20 @@ export function VideoSection() {
         >
           <div className={styles.frame}>
             <div className={styles.scanlines} aria-hidden />
-            <div ref={containerRef} className={styles.videoBox}>
+            <div className={styles.videoBox}>
               <video
                 ref={videoRef}
                 className={styles.video}
                 src={VIDEO_LEAD_STORY_SRC}
+                autoPlay
+                muted
                 loop
                 playsInline
                 preload="metadata"
-                muted={!soundOn}
-                defaultMuted
-                controls={false}
-                disablePictureInPicture
+                controls
                 aria-label="Vídeo da JV Eletrônicos — estoque e atendimento"
               />
               <div className={styles.videoOverlay} aria-hidden />
-              <div className={styles.videoChrome}>
-                <button
-                  type="button"
-                  className={styles.soundBtn}
-                  onClick={() => setSoundOn((v) => !v)}
-                  aria-pressed={soundOn}
-                  aria-label={soundOn ? "Desativar som do vídeo" : "Ativar som do vídeo"}
-                >
-                  {soundOn ? <Volume2 size={18} /> : <VolumeX size={18} />}
-                  {soundOn ? "Som ligado" : "Ativar som"}
-                </button>
-              </div>
             </div>
             <div className={styles.sideRail}>
               <span className={styles.railLabel}>Próximo passo</span>
