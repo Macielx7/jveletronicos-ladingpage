@@ -1,0 +1,42 @@
+export const testimonials = [
+  {
+    id: 1,
+    name: "Mariana Costa",
+    role: "Empresária — São Paulo",
+    rating: 5,
+    text: "Comprei o Pro Max lacrado com nota. Atendimento cirúrgico, entrega no mesmo dia e zero surpresa. Virou minha loja fixa.",
+    avatar: "MC",
+  },
+  {
+    id: 2,
+    name: "Rafael Mendes",
+    role: "Produtor audiovisual",
+    rating: 5,
+    text: "Sou chato com procedência. A JV mostrou serial, garantia e ainda parcelou do jeito que eu precisava. Recomendo sem medo.",
+    avatar: "RM",
+  },
+  {
+    id: 3,
+    name: "Juliana Alves",
+    role: "Médica",
+    rating: 5,
+    text: "Troquei de aparelho em 20 minutos no WhatsApp. Chegou embalado, impecável. Parecia comprar na Apple, só que com humanidade.",
+    avatar: "JA",
+  },
+  {
+    id: 4,
+    name: "Diego Ferreira",
+    role: "Engenheiro de software",
+    rating: 5,
+    text: "Preço justo, transparência total e suporte depois da venda. Raro hoje em dia. Já indiquei três amigos.",
+    avatar: "DF",
+  },
+  {
+    id: 5,
+    name: "Camila Rocha",
+    role: "Consultora de imagem",
+    rating: 5,
+    text: "Queria cor específica e estoque limitado. Eles seguraram unidade pra mim e documentaram tudo. Confiança de alto nível.",
+    avatar: "CR",
+  },
+];
