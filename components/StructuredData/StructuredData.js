@@ -20,7 +20,7 @@ export function StructuredData() {
       opens: "09:00",
       closes: "21:00",
     },
-    sameAs: [INSTAGRAM_URL, "https://youtube.com"],
+    sameAs: [INSTAGRAM_URL],
   };
 
   return (

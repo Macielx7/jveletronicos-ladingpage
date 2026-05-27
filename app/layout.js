@@ -63,6 +63,11 @@ export const metadata = {
   alternates: {
     canonical: SITE_URL,
   },
+  icons: {
+    icon: [{ url: "/logo.png", type: "image/png" }],
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({ children }) {

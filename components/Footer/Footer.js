@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FaInstagram, FaWhatsapp, FaYoutube } from "react-icons/fa";
+import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { getWhatsAppLink, SITE_NAME, INSTAGRAM_URL } from "@/utils/constants";
 import styles from "./Footer.module.css";
 
@@ -70,9 +70,6 @@ export function Footer() {
             </a>
             <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className={styles.socialBtn}>
               <FaInstagram size={18} />
-            </a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className={styles.socialBtn}>
-              <FaYoutube size={18} />
             </a>
           </div>
         </div>

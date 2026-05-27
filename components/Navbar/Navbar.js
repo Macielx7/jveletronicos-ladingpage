@@ -31,18 +31,17 @@ export function Navbar() {
       className={`${styles.header} ${scrolled ? styles.headerScrolled : ""}`}
     >
       <div className={styles.inner}>
-        <Link href="/" className={styles.brand}>
+        <Link href="/" className={styles.brand} aria-label={`${SITE_NAME} — início`}>
           <span className={styles.brandMark}>
             <Image
               src="/logo.png"
               alt={SITE_NAME}
-              width={88}
-              height={88}
+              width={96}
+              height={96}
               className={styles.brandImg}
               priority
             />
           </span>
-          <span className={styles.brandText}>{SITE_NAME}</span>
         </Link>
 
         <nav className={styles.nav} aria-label="Principal">

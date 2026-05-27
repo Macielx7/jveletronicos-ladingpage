@@ -71,6 +71,9 @@ export function VideoSection() {
                 playsInline
                 preload="metadata"
                 controls
+                controlsList="nodownload noremoteplayback"
+                disablePictureInPicture
+                onContextMenu={(e) => e.preventDefault()}
                 aria-label="Vídeo da JV Eletrônicos — estoque e atendimento"
               />
               <div className={styles.videoOverlay} aria-hidden />

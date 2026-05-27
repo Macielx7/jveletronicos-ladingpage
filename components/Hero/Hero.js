@@ -150,6 +150,9 @@ export function Hero() {
                   playsInline
                   preload="metadata"
                   controls
+                  controlsList="nodownload noremoteplayback"
+                  disablePictureInPicture
+                  onContextMenu={(e) => e.preventDefault()}
                   aria-label="Vídeo institucional JV Eletrônicos"
                 />
               </div>
